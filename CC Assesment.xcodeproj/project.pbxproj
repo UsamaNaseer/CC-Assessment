@@ -3,17 +3,27 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1ABAF6D82385C96A003162A0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF6D72385C96A003162A0 /* AppDelegate.swift */; };
 		1ABAF6DA2385C96A003162A0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF6D92385C96A003162A0 /* SceneDelegate.swift */; };
-		1ABAF6DC2385C96A003162A0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF6DB2385C96A003162A0 /* ViewController.swift */; };
 		1ABAF6DF2385C96A003162A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ABAF6DD2385C96A003162A0 /* Main.storyboard */; };
 		1ABAF6E12385C96B003162A0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1ABAF6E02385C96B003162A0 /* Assets.xcassets */; };
 		1ABAF6E42385C96B003162A0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1ABAF6E22385C96B003162A0 /* LaunchScreen.storyboard */; };
 		1ABAF6EF2385C96B003162A0 /* CC_AssesmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF6EE2385C96B003162A0 /* CC_AssesmentTests.swift */; };
+		1ABAF7062385CD3E003162A0 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7052385CD3E003162A0 /* WeatherViewController.swift */; };
+		1ABAF7082385CD4E003162A0 /* ResturantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7072385CD4E003162A0 /* ResturantViewController.swift */; };
+		1ABAF70C2385D024003162A0 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF70B2385D024003162A0 /* WeatherViewModel.swift */; };
+		1ABAF70E2385D02F003162A0 /* WeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF70D2385D02F003162A0 /* WeatherService.swift */; };
+		1ABAF7102385D03F003162A0 /* WeatherBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF70F2385D03F003162A0 /* WeatherBuilder.swift */; };
+		1ABAF7122385D051003162A0 /* ResturantBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7112385D051003162A0 /* ResturantBuilder.swift */; };
+		1ABAF7142385D05E003162A0 /* ResturantService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7132385D05E003162A0 /* ResturantService.swift */; };
+		1ABAF7162385D06E003162A0 /* ResturantViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7152385D06E003162A0 /* ResturantViewModel.swift */; };
+		1ABAF7182385D086003162A0 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7172385D086003162A0 /* ApiClient.swift */; };
+		1ABAF71A2385D095003162A0 /* RequestBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7192385D095003162A0 /* RequestBuilder.swift */; };
+		2B313501536FA6E058A9AEB5 /* Pods_CC_Assesment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3FBCCAFBD7997522E5535D /* Pods_CC_Assesment.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,7 +40,6 @@
 		1ABAF6D42385C96A003162A0 /* CC Assesment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CC Assesment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABAF6D72385C96A003162A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1ABAF6D92385C96A003162A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1ABAF6DB2385C96A003162A0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1ABAF6DE2385C96A003162A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1ABAF6E02385C96B003162A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1ABAF6E32385C96B003162A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -38,6 +47,19 @@
 		1ABAF6EA2385C96B003162A0 /* CC AssesmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CC AssesmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1ABAF6EE2385C96B003162A0 /* CC_AssesmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CC_AssesmentTests.swift; sourceTree = "<group>"; };
 		1ABAF6F02385C96B003162A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1ABAF7052385CD3E003162A0 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		1ABAF7072385CD4E003162A0 /* ResturantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantViewController.swift; sourceTree = "<group>"; };
+		1ABAF70B2385D024003162A0 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		1ABAF70D2385D02F003162A0 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
+		1ABAF70F2385D03F003162A0 /* WeatherBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherBuilder.swift; sourceTree = "<group>"; };
+		1ABAF7112385D051003162A0 /* ResturantBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantBuilder.swift; sourceTree = "<group>"; };
+		1ABAF7132385D05E003162A0 /* ResturantService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantService.swift; sourceTree = "<group>"; };
+		1ABAF7152385D06E003162A0 /* ResturantViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantViewModel.swift; sourceTree = "<group>"; };
+		1ABAF7172385D086003162A0 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		1ABAF7192385D095003162A0 /* RequestBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestBuilder.swift; sourceTree = "<group>"; };
+		2ADFD4669DA66255863AFD30 /* Pods-CC Assesment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CC Assesment.debug.xcconfig"; path = "Target Support Files/Pods-CC Assesment/Pods-CC Assesment.debug.xcconfig"; sourceTree = "<group>"; };
+		CC3FBCCAFBD7997522E5535D /* Pods_CC_Assesment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CC_Assesment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D2A1002EAB8E7986BECEB1F7 /* Pods-CC Assesment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CC Assesment.release.xcconfig"; path = "Target Support Files/Pods-CC Assesment/Pods-CC Assesment.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B313501536FA6E058A9AEB5 /* Pods_CC_Assesment.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +87,8 @@
 				1ABAF6D62385C96A003162A0 /* CC Assesment */,
 				1ABAF6ED2385C96B003162A0 /* CC AssesmentTests */,
 				1ABAF6D52385C96A003162A0 /* Products */,
+				6C7EFCA2B641D422A06F6945 /* Pods */,
+				B70D55CDDF7770A73D0E81AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +104,14 @@
 		1ABAF6D62385C96A003162A0 /* CC Assesment */ = {
 			isa = PBXGroup;
 			children = (
+				1ABAF70A2385CDAB003162A0 /* NetworkManager */,
+				1ABAF7092385CD62003162A0 /* Supporting files */,
+				1ABAF6FA2385CB95003162A0 /* ViewController Scenes */,
+				1ABAF6F92385CB8B003162A0 /* Models */,
 				1ABAF6D72385C96A003162A0 /* AppDelegate.swift */,
 				1ABAF6D92385C96A003162A0 /* SceneDelegate.swift */,
-				1ABAF6DB2385C96A003162A0 /* ViewController.swift */,
 				1ABAF6DD2385C96A003162A0 /* Main.storyboard */,
-				1ABAF6E02385C96B003162A0 /* Assets.xcassets */,
 				1ABAF6E22385C96B003162A0 /* LaunchScreen.storyboard */,
-				1ABAF6E52385C96B003162A0 /* Info.plist */,
 			);
 			path = "CC Assesment";
 			sourceTree = "<group>";
@@ -99,6 +125,143 @@
 			path = "CC AssesmentTests";
 			sourceTree = "<group>";
 		};
+		1ABAF6F92385CB8B003162A0 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1ABAF6FA2385CB95003162A0 /* ViewController Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF6FC2385CBDB003162A0 /* Weather */,
+				1ABAF6FB2385CBC3003162A0 /* Resturant */,
+			);
+			path = "ViewController Scenes";
+			sourceTree = "<group>";
+		};
+		1ABAF6FB2385CBC3003162A0 /* Resturant */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF7002385CCF3003162A0 /* Builder */,
+				1ABAF6FF2385CCED003162A0 /* Service */,
+				1ABAF6FE2385CCE1003162A0 /* ViewModel */,
+				1ABAF6FD2385CCDB003162A0 /* View */,
+			);
+			path = Resturant;
+			sourceTree = "<group>";
+		};
+		1ABAF6FC2385CBDB003162A0 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF7042385CD20003162A0 /* View */,
+				1ABAF7032385CD1B003162A0 /* ViewModel */,
+				1ABAF7022385CD13003162A0 /* Service */,
+				1ABAF7012385CD07003162A0 /* Builder */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		1ABAF6FD2385CCDB003162A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF7072385CD4E003162A0 /* ResturantViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1ABAF6FE2385CCE1003162A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF7152385D06E003162A0 /* ResturantViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1ABAF6FF2385CCED003162A0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF7132385D05E003162A0 /* ResturantService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1ABAF7002385CCF3003162A0 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF7112385D051003162A0 /* ResturantBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		1ABAF7012385CD07003162A0 /* Builder */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF70F2385D03F003162A0 /* WeatherBuilder.swift */,
+			);
+			path = Builder;
+			sourceTree = "<group>";
+		};
+		1ABAF7022385CD13003162A0 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF70D2385D02F003162A0 /* WeatherService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		1ABAF7032385CD1B003162A0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF70B2385D024003162A0 /* WeatherViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1ABAF7042385CD20003162A0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF7052385CD3E003162A0 /* WeatherViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1ABAF7092385CD62003162A0 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF6E52385C96B003162A0 /* Info.plist */,
+				1ABAF6E02385C96B003162A0 /* Assets.xcassets */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		1ABAF70A2385CDAB003162A0 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF7172385D086003162A0 /* ApiClient.swift */,
+				1ABAF7192385D095003162A0 /* RequestBuilder.swift */,
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		6C7EFCA2B641D422A06F6945 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2ADFD4669DA66255863AFD30 /* Pods-CC Assesment.debug.xcconfig */,
+				D2A1002EAB8E7986BECEB1F7 /* Pods-CC Assesment.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		B70D55CDDF7770A73D0E81AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CC3FBCCAFBD7997522E5535D /* Pods_CC_Assesment.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +269,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1ABAF6F32385C96B003162A0 /* Build configuration list for PBXNativeTarget "CC Assesment" */;
 			buildPhases = (
+				3A6881017917BE41B50AA8BE /* [CP] Check Pods Manifest.lock */,
 				1ABAF6D02385C96A003162A0 /* Sources */,
 				1ABAF6D12385C96A003162A0 /* Frameworks */,
 				1ABAF6D22385C96A003162A0 /* Resources */,
+				926019ED7E1652164CED5D99 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -195,14 +360,65 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3A6881017917BE41B50AA8BE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CC Assesment-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		926019ED7E1652164CED5D99 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CC Assesment/Pods-CC Assesment-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CC Assesment/Pods-CC Assesment-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CC Assesment/Pods-CC Assesment-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1ABAF6D02385C96A003162A0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1ABAF6DC2385C96A003162A0 /* ViewController.swift in Sources */,
+				1ABAF7182385D086003162A0 /* ApiClient.swift in Sources */,
+				1ABAF7122385D051003162A0 /* ResturantBuilder.swift in Sources */,
+				1ABAF70C2385D024003162A0 /* WeatherViewModel.swift in Sources */,
+				1ABAF71A2385D095003162A0 /* RequestBuilder.swift in Sources */,
 				1ABAF6D82385C96A003162A0 /* AppDelegate.swift in Sources */,
+				1ABAF7062385CD3E003162A0 /* WeatherViewController.swift in Sources */,
 				1ABAF6DA2385C96A003162A0 /* SceneDelegate.swift in Sources */,
+				1ABAF70E2385D02F003162A0 /* WeatherService.swift in Sources */,
+				1ABAF7142385D05E003162A0 /* ResturantService.swift in Sources */,
+				1ABAF7162385D06E003162A0 /* ResturantViewModel.swift in Sources */,
+				1ABAF7082385CD4E003162A0 /* ResturantViewController.swift in Sources */,
+				1ABAF7102385D03F003162A0 /* WeatherBuilder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -360,6 +576,7 @@
 		};
 		1ABAF6F42385C96B003162A0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2ADFD4669DA66255863AFD30 /* Pods-CC Assesment.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -377,6 +594,7 @@
 		};
 		1ABAF6F52385C96B003162A0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2A1002EAB8E7986BECEB1F7 /* Pods-CC Assesment.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
