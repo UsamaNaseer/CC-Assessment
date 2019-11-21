@@ -14,4 +14,5 @@ enum ApiConstants {
     static let weather = ""
     static let resturant = "/maps/api/place/nearbysearch/json"
     static let APIKEY = "AIzaSyA_4_ZncFAl9IK0WwEXh2wkPMKCveYD878"
+    static let imageBaseURL = "https://maps.googleapis.com/maps/api/place/photo?"
 }

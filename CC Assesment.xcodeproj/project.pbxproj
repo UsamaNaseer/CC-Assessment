@@ -27,6 +27,8 @@
 		1ABAF71F2385D2F3003162A0 /* WeatherRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF71E2385D2F3003162A0 /* WeatherRoute.swift */; };
 		1ABAF7212385D303003162A0 /* ResturantRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7202385D303003162A0 /* ResturantRoute.swift */; };
 		1ABAF7D22386F999003162A0 /* ResturantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7D12386F999003162A0 /* ResturantDTO.swift */; };
+		1ABAF7D523871C32003162A0 /* ResturantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7D423871C32003162A0 /* ResturantTableViewCell.swift */; };
+		1ABAF7D7238728F0003162A0 /* ResturantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7D6238728F0003162A0 /* ResturantCellViewModel.swift */; };
 		2B313501536FA6E058A9AEB5 /* Pods_CC_Assesment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3FBCCAFBD7997522E5535D /* Pods_CC_Assesment.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		1ABAF71E2385D2F3003162A0 /* WeatherRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRoute.swift; sourceTree = "<group>"; };
 		1ABAF7202385D303003162A0 /* ResturantRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantRoute.swift; sourceTree = "<group>"; };
 		1ABAF7D12386F999003162A0 /* ResturantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantDTO.swift; sourceTree = "<group>"; };
+		1ABAF7D423871C32003162A0 /* ResturantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantTableViewCell.swift; sourceTree = "<group>"; };
+		1ABAF7D6238728F0003162A0 /* ResturantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantCellViewModel.swift; sourceTree = "<group>"; };
 		2ADFD4669DA66255863AFD30 /* Pods-CC Assesment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CC Assesment.debug.xcconfig"; path = "Target Support Files/Pods-CC Assesment/Pods-CC Assesment.debug.xcconfig"; sourceTree = "<group>"; };
 		CC3FBCCAFBD7997522E5535D /* Pods_CC_Assesment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CC_Assesment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A1002EAB8E7986BECEB1F7 /* Pods-CC Assesment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CC Assesment.release.xcconfig"; path = "Target Support Files/Pods-CC Assesment/Pods-CC Assesment.release.xcconfig"; sourceTree = "<group>"; };
@@ -177,6 +181,7 @@
 		1ABAF6FD2385CCDB003162A0 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1ABAF7D323871C02003162A0 /* Cell */,
 				1ABAF7072385CD4E003162A0 /* ResturantViewController.swift */,
 			);
 			path = View;
@@ -263,6 +268,15 @@
 				1ABAF71C2385D1B4003162A0 /* ApiConstants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		1ABAF7D323871C02003162A0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				1ABAF7D423871C32003162A0 /* ResturantTableViewCell.swift */,
+				1ABAF7D6238728F0003162A0 /* ResturantCellViewModel.swift */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		6C7EFCA2B641D422A06F6945 /* Pods */ = {
@@ -431,12 +445,14 @@
 				1ABAF71D2385D1B4003162A0 /* ApiConstants.swift in Sources */,
 				1ABAF7122385D051003162A0 /* ResturantBuilder.swift in Sources */,
 				1ABAF70C2385D024003162A0 /* WeatherViewModel.swift in Sources */,
+				1ABAF7D523871C32003162A0 /* ResturantTableViewCell.swift in Sources */,
 				1ABAF71A2385D095003162A0 /* RequestBuilder.swift in Sources */,
 				1ABAF6D82385C96A003162A0 /* AppDelegate.swift in Sources */,
 				1ABAF71F2385D2F3003162A0 /* WeatherRoute.swift in Sources */,
 				1ABAF7062385CD3E003162A0 /* WeatherViewController.swift in Sources */,
 				1ABAF6DA2385C96A003162A0 /* SceneDelegate.swift in Sources */,
 				1ABAF70E2385D02F003162A0 /* WeatherService.swift in Sources */,
+				1ABAF7D7238728F0003162A0 /* ResturantCellViewModel.swift in Sources */,
 				1ABAF7142385D05E003162A0 /* ResturantService.swift in Sources */,
 				1ABAF7212385D303003162A0 /* ResturantRoute.swift in Sources */,
 				1ABAF7D22386F999003162A0 /* ResturantDTO.swift in Sources */,

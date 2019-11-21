@@ -8,24 +8,50 @@
 
 import Foundation
 
+typealias output = (ResturantViewModel.OutputType) -> Void
+
 protocol ResturantViewModelDelegate {
-     func viewDidLoad()
+    var numberOfRows: Int { get }
+    var results: [Resturant] { get }
+    func viewDidLoad()
+    var output: output? { get set }
+    func populateData()
+    func getCellViewModel(indexpath: IndexPath) -> ResturantCellViewModel
 }
 
 class ResturantViewModel: ResturantViewModelDelegate {
+        enum OutputType {
+        case reloadData
+        case error(message: String)
+        }
+    var output: output?
+        var results = [Resturant]()
+        var cellViewModels = [ResturantCellViewModel]()
+        var numberOfRows: Int {
+            return cellViewModels.count
+        }
         private var service: ResturantServiceDelegate
         init(service: ResturantServiceDelegate) {
          self.service = service
         }
-    func viewDidLoad() {
-        service.resturants(input: ResturantInput(location: "-33.8670522,151.1957362", radius: 1000, type: "resturant", keyword: "food"), delegate: self)
-    }
-    
+        func viewDidLoad() {
+            service.resturants(input: ResturantInput(location: "-33.8670522,151.1957362", radius: 1000, type: "resturant", keyword: "food"), delegate: self)
+        }
+        func getCellViewModel(indexpath: IndexPath) -> ResturantCellViewModel {
+            let cellModel = cellViewModels[indexpath.row]
+            return cellModel
+        }
+        func populateData() {
+            output?(.reloadData)
+        }
 }
 
 extension ResturantViewModel: ResturantServiceResultDelegate {
     func success(result: ResturantDTO) {
-        print(result)
+        result.results?.forEach({ (resturant) in
+            cellViewModels.append(ResturantCellViewModel.init(model: resturant))
+        })
+        populateData()
     }
     
     func failure(error: String) {
