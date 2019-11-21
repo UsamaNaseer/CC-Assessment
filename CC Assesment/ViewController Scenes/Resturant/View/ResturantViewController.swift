@@ -9,14 +9,15 @@
 import UIKit
 
 class ResturantViewController: UIViewController {
-
+    var viewModel: ResturantViewModelDelegate?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initViews()
+        
         // Do any additional setup after loading the view.
     }
     
-
+    
     /*
     // MARK: - Navigation
 
@@ -27,4 +28,11 @@ class ResturantViewController: UIViewController {
     }
     */
 
+}
+
+extension ResturantViewController {
+    func initViews() {
+        viewModel = ResturantViewModel(service: ResturantService())
+        viewModel?.viewDidLoad()
+    }
 }

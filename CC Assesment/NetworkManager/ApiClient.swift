@@ -18,3 +18,9 @@ class ApiClient {
     }
     }
 }
+
+extension ApiClient {
+    static func resturants(res: ResturantInput,completion:@escaping (Result<ResturantDTO,AFError>)->Void) {
+           performRequest(builder: ResturantRoute.resturants(res: res),completion: completion )
+       }
+}

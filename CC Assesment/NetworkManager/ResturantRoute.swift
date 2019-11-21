@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 enum ResturantRoute : URLRequestBuilder {
-    case resturants
+    case resturants(res: ResturantInput)
 }
 
 extension ResturantRoute {
@@ -28,9 +28,14 @@ extension ResturantRoute {
     }
     
     var parameters: Parameters? {
-        let params = Parameters()
+        var params = Parameters()
         switch self {
-        case .resturants:
+        case .resturants(let resturant):
+            params["location"] = resturant.location
+            params["radius"] = resturant.radius
+            params["type"] = resturant.type
+            params["keyword"] = resturant.keyword
+            params["key"] = ApiConstants.APIKEY
             return params
         }
     }
