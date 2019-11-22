@@ -29,6 +29,7 @@
 		1ABAF7D22386F999003162A0 /* ResturantDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7D12386F999003162A0 /* ResturantDTO.swift */; };
 		1ABAF7D523871C32003162A0 /* ResturantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7D423871C32003162A0 /* ResturantTableViewCell.swift */; };
 		1ABAF7D7238728F0003162A0 /* ResturantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7D6238728F0003162A0 /* ResturantCellViewModel.swift */; };
+		1ABAF7DA23882A1C003162A0 /* WeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7D923882A1C003162A0 /* WeatherDTO.swift */; };
 		2B313501536FA6E058A9AEB5 /* Pods_CC_Assesment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3FBCCAFBD7997522E5535D /* Pods_CC_Assesment.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		1ABAF7D12386F999003162A0 /* ResturantDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantDTO.swift; sourceTree = "<group>"; };
 		1ABAF7D423871C32003162A0 /* ResturantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantTableViewCell.swift; sourceTree = "<group>"; };
 		1ABAF7D6238728F0003162A0 /* ResturantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantCellViewModel.swift; sourceTree = "<group>"; };
+		1ABAF7D923882A1C003162A0 /* WeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDTO.swift; sourceTree = "<group>"; };
 		2ADFD4669DA66255863AFD30 /* Pods-CC Assesment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CC Assesment.debug.xcconfig"; path = "Target Support Files/Pods-CC Assesment/Pods-CC Assesment.debug.xcconfig"; sourceTree = "<group>"; };
 		CC3FBCCAFBD7997522E5535D /* Pods_CC_Assesment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CC_Assesment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A1002EAB8E7986BECEB1F7 /* Pods-CC Assesment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CC Assesment.release.xcconfig"; path = "Target Support Files/Pods-CC Assesment/Pods-CC Assesment.release.xcconfig"; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				1ABAF7D12386F999003162A0 /* ResturantDTO.swift */,
+				1ABAF7D923882A1C003162A0 /* WeatherDTO.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 				1ABAF7182385D086003162A0 /* ApiClient.swift in Sources */,
 				1ABAF71D2385D1B4003162A0 /* ApiConstants.swift in Sources */,
 				1ABAF7122385D051003162A0 /* ResturantBuilder.swift in Sources */,
+				1ABAF7DA23882A1C003162A0 /* WeatherDTO.swift in Sources */,
 				1ABAF70C2385D024003162A0 /* WeatherViewModel.swift in Sources */,
 				1ABAF7D523871C32003162A0 /* ResturantTableViewCell.swift in Sources */,
 				1ABAF71A2385D095003162A0 /* RequestBuilder.swift in Sources */,

@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 
 enum WeatherRoute : URLRequestBuilder {
-    case weather
+    case weather(input: WeatherInput)
 }
 
 extension WeatherRoute {
@@ -27,9 +27,12 @@ extension WeatherRoute {
     }
     
     var parameters: Parameters? {
-        let params = Parameters()
+        var params = Parameters()
         switch self {
-        case .weather:
+        case .weather(let weatherInput):
+            params["lat"] = weatherInput.lat
+            params["lon"] = weatherInput.long
+            params["appid"] = ApiConstants.WeatherAPPID
             return params
         }
     }

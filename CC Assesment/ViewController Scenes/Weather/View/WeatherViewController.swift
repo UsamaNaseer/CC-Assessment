@@ -7,24 +7,52 @@
 //
 
 import UIKit
+import CoreLocation
 
 class WeatherViewController: UIViewController {
-
+    let locationManager = CLLocationManager()
+    var viewModel: WeatherViewModel?
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        initViews()
         // Do any additional setup after loading the view.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel?.viewDidAppear()
     }
-    */
+}
 
+extension WeatherViewController : CLLocationManagerDelegate {
+    func initLocation() {
+        locationManager.requestAlwaysAuthorization()
+        // For use in foreground
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        viewModel?.lat = locValue.latitude
+        viewModel?.long = locValue.longitude
+    }
+}
+
+extension WeatherViewController {
+    func initViews(){
+        viewModel = WeatherViewModel(service: WeatherService())
+        initLocation()
+        viewModel?.weatherOutput = { result in
+            switch result {
+            case .reloadData:
+                break
+            case .error(let message):
+                print(message)
+            }
+            
+        }
+    }
 }

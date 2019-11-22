@@ -23,4 +23,7 @@ extension ApiClient {
     static func resturants(res: ResturantInput,completion:@escaping (Result<ResturantDTO,AFError>)->Void) {
            performRequest(builder: ResturantRoute.resturants(res: res),completion: completion )
        }
+    static func weatherList(weather: WeatherInput,completion:@escaping (Result<WeatherListDTO,AFError>)->Void) {
+        performRequest(builder: WeatherRoute.weather(input: weather),completion: completion )
+    }
 }
