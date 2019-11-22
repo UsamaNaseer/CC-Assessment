@@ -14,33 +14,45 @@ protocol ResturantViewModelDelegate {
     var numberOfRows: Int { get }
     var results: [Resturant] { get }
     func viewDidLoad()
+    func viewDidAppear()
     var output: output? { get set }
     func populateData()
+    var location: String? { get set }
     func getCellViewModel(indexpath: IndexPath) -> ResturantCellViewModel
 }
 
 class ResturantViewModel: ResturantViewModelDelegate {
+        private var service: ResturantServiceDelegate
+        var location: String?
         enum OutputType {
         case reloadData
         case error(message: String)
         }
-    var output: output?
+        var output: output?
         var results = [Resturant]()
         var cellViewModels = [ResturantCellViewModel]()
         var numberOfRows: Int {
             return cellViewModels.count
         }
-        private var service: ResturantServiceDelegate
+        
         init(service: ResturantServiceDelegate) {
          self.service = service
         }
+    
         func viewDidLoad() {
-            service.resturants(input: ResturantInput(location: "-33.8670522,151.1957362", radius: 1000, type: "resturant", keyword: "food"), delegate: self)
+           
         }
+        
+        func viewDidAppear() {
+            service.resturants(input: ResturantInput(location: location, radius: 1000, type: "resturant", keyword: "food"), delegate: self)
+        }
+    
+    
         func getCellViewModel(indexpath: IndexPath) -> ResturantCellViewModel {
             let cellModel = cellViewModels[indexpath.row]
             return cellModel
         }
+    
         func populateData() {
             output?(.reloadData)
         }
@@ -48,7 +60,8 @@ class ResturantViewModel: ResturantViewModelDelegate {
 
 extension ResturantViewModel: ResturantServiceResultDelegate {
     func success(result: ResturantDTO) {
-        result.results?.forEach({ (resturant) in
+        let sortedResturants = result.results?.sorted(by: { ($0.rating ?? 0.0) > ($1.rating ?? 0.0)})
+        sortedResturants?.forEach({ (resturant) in
             cellViewModels.append(ResturantCellViewModel.init(model: resturant))
         })
         populateData()

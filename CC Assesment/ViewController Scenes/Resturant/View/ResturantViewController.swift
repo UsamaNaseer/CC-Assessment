@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import CoreLocation
 
 class ResturantViewController: UIViewController {
+    let locationManager = CLLocationManager()
     var viewModel: ResturantViewModelDelegate?
     @IBOutlet weak var resturantTableView: UITableView!
     override func viewDidLoad() {
@@ -16,6 +18,10 @@ class ResturantViewController: UIViewController {
         initViews()
         
         // Do any additional setup after loading the view.
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel?.viewDidAppear()
     }
     
     func bindViewModel() {
@@ -30,16 +36,6 @@ class ResturantViewController: UIViewController {
             
         }
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
 
 extension ResturantViewController {
@@ -47,9 +43,25 @@ extension ResturantViewController {
         viewModel = ResturantViewModel(service: ResturantService())
         viewModel?.viewDidLoad()
         bindViewModel()
+        initLocation()
     }
 }
-
+extension ResturantViewController : CLLocationManagerDelegate {
+    func initLocation() {
+        locationManager.requestAlwaysAuthorization()
+        // For use in foreground
+        locationManager.requestWhenInUseAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        viewModel?.location = "\(locValue.latitude),\(locValue.longitude)"
+    }
+}
 extension ResturantViewController : UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.numberOfRows ?? 0
@@ -57,15 +69,11 @@ extension ResturantViewController : UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellModel = viewModel?.getCellViewModel(indexpath: indexPath) ?? ResturantCellViewModel()
-        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "resturantCell") as? ResturantTableViewCell else { let cell = ResturantTableViewCell(style: .default, reuseIdentifier: "resturantCell")
             return cell
         }
-        
         cell.updateCell(model: cellModel)
         cell.selectionStyle = .none
         return cell
     }
-    
-    
 }
