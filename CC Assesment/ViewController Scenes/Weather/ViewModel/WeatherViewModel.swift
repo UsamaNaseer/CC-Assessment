@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 typealias weatherResult = (WeatherViewModel.outputWeather) -> Void
 
@@ -16,13 +17,16 @@ protocol WeatherViewModelDelegate {
     var long: Double? { get set }
     var days: [String] { get set }
     var results: [WeatherDTO] { get set }
+    var city: String? { get }
     func viewDidAppear()
+    func viewWillAppear()
     func populateData()
     func getResults() -> (WeatherData, [ForecastWeather])
+    
 }
 
 class WeatherViewModel : WeatherViewModelDelegate {
-    
+    var city: String?
     var results = [WeatherDTO]()
     var lat: Double?
     var long: Double?
@@ -35,6 +39,15 @@ class WeatherViewModel : WeatherViewModelDelegate {
     private var service: WeatherServiceDelegate
     init(service: WeatherServiceDelegate) {
         self.service = service
+    }
+    func viewWillAppear() {
+          let location = CLLocation(latitude: lat ?? 0.0, longitude: long ?? 0.0)
+                            location.fetchCityAndCountry { [weak self] city, country, error in
+                                guard let self = self else { return }
+                                guard let city = city, let country = country, error == nil else { return }
+                                print(city + ", " + country)  // Rio de Janeiro, Brazil
+                                self.city = city
+        }
     }
     func viewDidAppear() {
         service.weathers(input: WeatherInput(lat: lat ?? 0.0, long: long ?? 0.0), delegate: self)
@@ -49,6 +62,7 @@ class WeatherViewModel : WeatherViewModelDelegate {
     }
     func populateData() {
         weatherOutput?(.reloadData)
+       
     }
     func dayFromdate(date: String) -> String {
         let formatter  = DateFormatter()

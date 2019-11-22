@@ -7,3 +7,17 @@
 //
 
 import Foundation
+import UIKit
+
+protocol ResturantBuilderDelegate {
+    func build() -> ResturantViewController?
+}
+
+class ResturantBuilder: ResturantBuilderDelegate {
+    let storyboard = UIStoryboard.init(name: "Main", bundle: .main)
+    func build() -> ResturantViewController? {
+        guard let resturant = UIStoryboard.init(name: "Main", bundle: .main).instantiateViewController(withIdentifier: "ResturantViewController") as? ResturantViewController else { return nil }
+        resturant.viewModel = ResturantViewModel(service: ResturantService())
+        return resturant
+    }
+}

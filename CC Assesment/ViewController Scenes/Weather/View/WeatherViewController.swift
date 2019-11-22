@@ -12,9 +12,8 @@ import SDWebImage
 
 class WeatherViewController: UIViewController {
     let locationManager = CLLocationManager()
-    var viewModel: WeatherViewModel?
+    var viewModel: WeatherViewModelDelegate?
     @IBOutlet weak var heightConstraint: NSLayoutConstraint!
-    
     @IBOutlet var forecastImage: [UIImageView]!
     @IBOutlet var forecastMinMaxTemp_lb: [UILabel]!
     @IBOutlet var forecastDays_lb: [UILabel]!
@@ -29,12 +28,20 @@ class WeatherViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initViews()
-     
-        // Do any additional setup after loading the view.
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        navigationController?.isNavigationBarHidden = true
         viewModel?.viewDidAppear()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel?.viewWillAppear()
+    }
+    
+    @IBAction func popularResturantTapped(_ sender: Any) {
+        guard let resturant = ResturantBuilder().build() else { return }
+        navigationController?.pushViewController(resturant, animated: true)
     }
 }
 
@@ -90,6 +97,6 @@ extension WeatherViewController {
             forecastMinMaxTemp_lb[i].text = forecast[i].minmaxTemp
             forecastImage[i].sd_setImage(with: URL(string: forecast[i].image), placeholderImage: UIImage(named: "placeholder.png"))
         }
-//
+        city_lb.text = viewModel?.city ?? "Karachi"
     }
 }

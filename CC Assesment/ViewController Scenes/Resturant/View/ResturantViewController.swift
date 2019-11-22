@@ -19,6 +19,7 @@ class ResturantViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         viewModel?.viewDidAppear()
@@ -40,8 +41,8 @@ class ResturantViewController: UIViewController {
 
 extension ResturantViewController {
     func initViews() {
-        viewModel = ResturantViewModel(service: ResturantService())
         viewModel?.viewDidLoad()
+        setNavigation()
         bindViewModel()
         initLocation()
     }
@@ -60,6 +61,11 @@ extension ResturantViewController : CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         viewModel?.location = "\(locValue.latitude),\(locValue.longitude)"
+    }
+    func setNavigation() {
+        navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.barTintColor = UIColor(named: "Blue")
+        navigationController?.navigationBar.tintColor = .white
     }
 }
 extension ResturantViewController : UITableViewDataSource {

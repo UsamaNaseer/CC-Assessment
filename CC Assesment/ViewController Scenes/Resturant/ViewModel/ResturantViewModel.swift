@@ -44,7 +44,7 @@ class ResturantViewModel: ResturantViewModelDelegate {
         }
         
         func viewDidAppear() {
-            //service.resturants(input: ResturantInput(location: location, radius: 1000, type: "resturant", keyword: "food"), delegate: self)
+            service.resturants(input: ResturantInput(location: location, radius: 1000, type: "resturant", keyword: "food"), delegate: self)
         }
     
     
