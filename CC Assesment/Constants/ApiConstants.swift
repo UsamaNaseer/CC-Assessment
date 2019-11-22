@@ -16,6 +16,7 @@ enum ApiConstants {
     static let APIKEY = "AIzaSyA_4_ZncFAl9IK0WwEXh2wkPMKCveYD878"
     static let WeatherAPPID = "d0b56cd8d0ba96474f6afa019756844d"
     static let imageBaseURL = "https://maps.googleapis.com/maps/api/place/photo?"
+    static let weatherImageBaseURL = "http://openweathermap.org/img/w/"
 }
 
 enum AppConstants {

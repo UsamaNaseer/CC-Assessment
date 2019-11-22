@@ -78,3 +78,10 @@ struct Wind: Codable {
 struct WeatherInput {
     let lat,long: Double?
 }
+
+struct WeatherData {
+    let humidity, clouds, wind, temp, tempDesc, day, image : String
+}
+struct ForecastWeather {
+    let image, minmaxTemp, day: String
+}
