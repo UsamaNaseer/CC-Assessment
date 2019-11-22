@@ -66,7 +66,6 @@ extension ResturantViewModel: ResturantServiceResultDelegate {
         })
         populateData()
     }
-    
     func failure(error: String) {
         print(error)
     }
