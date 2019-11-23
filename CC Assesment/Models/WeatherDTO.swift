@@ -8,7 +8,7 @@
 
 import Foundation
 // MARK: - WeatherDTO
-struct WeatherListDTO: Codable {
+public struct WeatherListDTO: Codable {
     let list: [WeatherDTO]?
     let cod: String?
 }
@@ -75,8 +75,12 @@ struct Wind: Codable {
     let deg: Int?
 }
 
-struct WeatherInput {
+public struct WeatherInput {
     let lat,long: Double?
+    public init(lat: Double,long: Double) {
+        self.lat = lat
+        self.long = long
+    }
 }
 
 struct WeatherData {

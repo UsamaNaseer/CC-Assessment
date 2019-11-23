@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class ApiClient {
+public class ApiClient {
     @discardableResult
     private static func performRequest<T:Decodable> (builder: URLRequestBuilder,decoder: JSONDecoder = JSONDecoder(), completion: @escaping (Result<T,AFError>)->Void) -> DataRequest {
     return AF.request(builder)
@@ -20,10 +20,10 @@ class ApiClient {
 }
 
 extension ApiClient {
-    static func resturants(res: ResturantInput,completion:@escaping (Result<ResturantDTO,AFError>)->Void) {
+    public static func resturants(res: ResturantInput,completion:@escaping (Result<ResturantDTO,AFError>)->Void) {
            performRequest(builder: ResturantRoute.resturants(res: res),completion: completion )
        }
-    static func weatherList(weather: WeatherInput,completion:@escaping (Result<WeatherListDTO,AFError>)->Void) {
+    public static func weatherList(weather: WeatherInput,completion:@escaping (Result<WeatherListDTO,AFError>)->Void) {
         performRequest(builder: WeatherRoute.weather(input: weather),completion: completion )
     }
 }

@@ -31,6 +31,7 @@
 		1ABAF7D7238728F0003162A0 /* ResturantCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7D6238728F0003162A0 /* ResturantCellViewModel.swift */; };
 		1ABAF7DA23882A1C003162A0 /* WeatherDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7D923882A1C003162A0 /* WeatherDTO.swift */; };
 		1ABAF7DD238880E2003162A0 /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7DC238880E2003162A0 /* CLLocation+Extension.swift */; };
+		1ABAF7DF23892CB1003162A0 /* WeatherRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1ABAF7DE23892CB1003162A0 /* WeatherRequest.swift */; };
 		2B313501536FA6E058A9AEB5 /* Pods_CC_Assesment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3FBCCAFBD7997522E5535D /* Pods_CC_Assesment.framework */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +74,7 @@
 		1ABAF7D6238728F0003162A0 /* ResturantCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantCellViewModel.swift; sourceTree = "<group>"; };
 		1ABAF7D923882A1C003162A0 /* WeatherDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDTO.swift; sourceTree = "<group>"; };
 		1ABAF7DC238880E2003162A0 /* CLLocation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
+		1ABAF7DE23892CB1003162A0 /* WeatherRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRequest.swift; sourceTree = "<group>"; };
 		2ADFD4669DA66255863AFD30 /* Pods-CC Assesment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CC Assesment.debug.xcconfig"; path = "Target Support Files/Pods-CC Assesment/Pods-CC Assesment.debug.xcconfig"; sourceTree = "<group>"; };
 		CC3FBCCAFBD7997522E5535D /* Pods_CC_Assesment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CC_Assesment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2A1002EAB8E7986BECEB1F7 /* Pods-CC Assesment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CC Assesment.release.xcconfig"; path = "Target Support Files/Pods-CC Assesment/Pods-CC Assesment.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,7 +126,7 @@
 				1ABAF71B2385D19E003162A0 /* Constants */,
 				1ABAF70A2385CDAB003162A0 /* NetworkManager */,
 				1ABAF7092385CD62003162A0 /* Supporting files */,
-				1ABAF6FA2385CB95003162A0 /* ViewController Scenes */,
+				1ABAF6FA2385CB95003162A0 /* Scenes */,
 				1ABAF6F92385CB8B003162A0 /* Models */,
 				1ABAF6E52385C96B003162A0 /* Info.plist */,
 				1ABAF6D72385C96A003162A0 /* AppDelegate.swift */,
@@ -140,6 +142,7 @@
 			children = (
 				1ABAF6EE2385C96B003162A0 /* CC_AssesmentTests.swift */,
 				1ABAF6F02385C96B003162A0 /* Info.plist */,
+				1ABAF7DE23892CB1003162A0 /* WeatherRequest.swift */,
 			);
 			path = "CC AssesmentTests";
 			sourceTree = "<group>";
@@ -153,13 +156,13 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		1ABAF6FA2385CB95003162A0 /* ViewController Scenes */ = {
+		1ABAF6FA2385CB95003162A0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				1ABAF6FC2385CBDB003162A0 /* Weather */,
 				1ABAF6FB2385CBC3003162A0 /* Resturant */,
 			);
-			path = "ViewController Scenes";
+			path = Scenes;
 			sourceTree = "<group>";
 		};
 		1ABAF6FB2385CBC3003162A0 /* Resturant */ = {
@@ -482,6 +485,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1ABAF7DF23892CB1003162A0 /* WeatherRequest.swift in Sources */,
 				1ABAF6EF2385C96B003162A0 /* CC_AssesmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

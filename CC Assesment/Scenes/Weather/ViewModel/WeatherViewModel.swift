@@ -64,7 +64,7 @@ class WeatherViewModel : WeatherViewModelDelegate {
         weatherOutput?(.reloadData)
        
     }
-    func dayFromdate(date: String) -> String {
+    public func dayFromdate(date: String) -> String {
         let formatter  = DateFormatter()
         formatter.dateFormat = AppConstants.dateFormat
         guard let todayDate = formatter.date(from: date) else { return "" }
@@ -72,7 +72,7 @@ class WeatherViewModel : WeatherViewModelDelegate {
         dateFormatter.dateFormat = AppConstants.day
         return dateFormatter.string(from: todayDate).capitalized
     }
-    func timeFromDate(date: String) -> String {
+    public func timeFromDate(date: String) -> String {
         let formatter  = DateFormatter()
         formatter.dateFormat = AppConstants.dateFormat
         guard let todayDate = formatter.date(from: date) else { return "" }

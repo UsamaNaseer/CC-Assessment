@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ResturantDTO: Codable {
+public struct ResturantDTO: Codable {
     let results: [Resturant]?
 }
 struct Resturant: Codable {
@@ -89,7 +89,7 @@ struct PlusCode: Codable {
     }
 }
 
-struct ResturantInput {
+public struct ResturantInput {
     let location: String?
     let radius: Int?
     let type: String?
